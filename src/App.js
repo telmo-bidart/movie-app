@@ -10,10 +10,10 @@ const SEARCH_API =
 
 function App() {
   const [movies, setMovies] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    getMovies(FEATURED_API)
+    getMovies(FEATURED_API);
   }, []);
 
   const getMovies = (API) => {
@@ -22,7 +22,7 @@ function App() {
       .then((data) => {
         setMovies(data.results);
       });
-  }
+  };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -41,6 +41,7 @@ function App() {
   return (
     <>
       <header>
+      <a className="home" href="/" class="btn btn-lg btn-success">Home</a>
         <form onSubmit={handleOnSubmit}>
           <input
             className="search"
